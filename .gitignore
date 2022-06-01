@@ -1,0 +1,7 @@
+.vscode
+*.meta
+Assets/Epic Toon FX/
+Assets/FlatKit/
+Library/
+Logs/
+Temp/
