@@ -66,6 +66,8 @@
      <Compile Include="Assets\Scripts\SceneManagement\SavingWrapper.cs" />
      <Compile Include="Assets\Scripts\Core\IAction.cs" />
      <Compile Include="Assets\Scripts\Core\DestroyAfterEffect.cs" />
+     <Compile Include="Assets\Scripts\Stats\BaseStats.cs" />
+     <Compile Include="Assets\Scripts\Stats\CharacterClass.cs" />
      <None Include="Assets\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
      <None Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Resources\OutlinePlus.shader" />
      <None Include="Assets\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
