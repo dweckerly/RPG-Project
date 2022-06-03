@@ -14,12 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterClasses:
   - characterClass: 0
-    healthProperties:
+    stats:
+    - stat: 0
       startingValue: 100
       percentageIncrease: 0.2
       baseAdded: 10
   - characterClass: 1
-    healthProperties:
+    stats:
+    - stat: 0
       startingValue: 50
       percentageIncrease: 0.1
+      baseAdded: 5
+    - stat: 1
+      startingValue: 5
+      percentageIncrease: 0.5
       baseAdded: 5

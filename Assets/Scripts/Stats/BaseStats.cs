@@ -13,12 +13,12 @@ namespace RPG.Stats
 
         public float GetHealth()
         {
-            return progression.GetStat(characterClass, startingLevel, Stat.Health);
+            return progression.GetStat(Stat.Health, characterClass, startingLevel);
         }
 
         public float GetExperienceReward()
         {
-            return 10f;
+            return progression.GetStat(Stat.ExperienceReward, characterClass, startingLevel);
         }
     }
 }

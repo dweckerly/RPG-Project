@@ -7,26 +7,21 @@ namespace RPG.Stats
     {
         [SerializeField] ProgressionCharacterClass[] characterClasses = null;
 
-        public float GetStat(CharacterClass characterClass, int level, Stat stat)
+        public float GetStat(Stat stat, CharacterClass characterClass, int level)
         {
             foreach(ProgressionCharacterClass pcc in characterClasses) 
             {
-                if(pcc.characterClass == characterClass)
+                if(pcc.characterClass != characterClass) continue;
+                foreach (StatAttribute sa in pcc.stats)
                 {
-                    foreach (StatAttribute sa in pcc.stats)
+                    if(sa.stat != stat) continue;
+                    StatAttribute targetSA = sa;
+                    float statValue = targetSA.GetStartingValue();
+                    for (int i = 0; i < level; i++)
                     {
-                        if(sa.stat == stat)
-                        {
-                            StatAttribute targetSA = sa;
-                            float startingValue = targetSA.GetStartingValue();
-                            for (int i = 0; i < level; i++)
-                            {
-                                startingValue += (i * targetSA.GetBaseAdded()) + (startingValue * targetSA.GetPercentageIncrease());
-                            }
-                            return startingValue;
-                        }
-                        
+                        statValue += (i * targetSA.GetBaseAdded()) + (statValue * targetSA.GetPercentageIncrease());
                     }
+                    return statValue;
                 }
             }
             return 0;
