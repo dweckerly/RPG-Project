@@ -36,7 +36,7 @@ namespace RPG.Stats
 
         private void LevelUpEffect()
         {
-            Instantiate(levelUpEffect, transform.position, Quaternion.identity);
+            Instantiate(levelUpEffect, transform);
         }
 
         public float GetHealth()

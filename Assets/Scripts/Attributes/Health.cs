@@ -10,10 +10,13 @@ namespace RPG.Attributes
         float healthPoints = -1f;
         bool dead = false;
 
+        BaseStats baseStats;
+
         private void Start() 
         {
-            GetComponent<BaseStats>().onLevelUp += RegenerateHealth;
-            if(healthPoints < 0) healthPoints = GetComponent<BaseStats>().GetHealth();            
+            baseStats = GetComponent<BaseStats>();
+            baseStats.onLevelUp += RegenerateHealth;
+            if(healthPoints < 0) healthPoints = baseStats.GetHealth();            
         }
 
         public bool isDead()
@@ -32,16 +35,26 @@ namespace RPG.Attributes
             }
         }
 
+        public float GetCurrentHealthPoints()
+        {
+            return healthPoints;
+        }
+
+        public float GetMaxHealthPoints()
+        {
+            return baseStats.GetHealth();
+        }
+
         public float GetHealthPercentage()
         {
-            return 100 * (healthPoints / GetComponent<BaseStats>().GetHealth());
+            return 100 * (healthPoints / baseStats.GetHealth());
         }
 
         private void AwardExperience(GameObject source)
         {
             Experience exp = source.GetComponent<Experience>();
             if(exp == null) return;
-            exp.GainExperience(GetComponent<BaseStats>().GetExperienceReward());
+            exp.GainExperience(baseStats.GetExperienceReward());
         }
 
         private void Die()
@@ -53,7 +66,7 @@ namespace RPG.Attributes
 
         private void RegenerateHealth()
         {
-            healthPoints = GetComponent<BaseStats>().GetHealth();
+            healthPoints = baseStats.GetHealth();
         }
 
         public object CaptureState()
