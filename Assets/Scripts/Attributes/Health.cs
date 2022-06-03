@@ -20,11 +20,15 @@ namespace RPG.Attributes
             return dead;
         }
 
-        public void TakeDamage(float amount)
+        public void TakeDamage(GameObject source, float amount)
         {
             if (dead) return;
             health = Mathf.Max(health - amount, 0);
-            CheckDeathState();
+            if (health == 0)
+            {
+                Die();
+                AwardExperience(source);
+            }
         }
 
         public float GetHealthPercentage()
@@ -32,12 +36,11 @@ namespace RPG.Attributes
             return 100 * (health / GetComponent<BaseStats>().GetHealth());
         }
 
-        private void CheckDeathState()
+        private void AwardExperience(GameObject source)
         {
-            if (health == 0)
-            {
-                Die();
-            }
+            Experience exp = source.GetComponent<Experience>();
+            if(exp == null) return;
+            exp.GainExperience(GetComponent<BaseStats>().GetExperienceReward());
         }
 
         private void Die()
@@ -55,7 +58,10 @@ namespace RPG.Attributes
         public void RestoreState(object state)
         {
             health = (float) state;
-            CheckDeathState();
+            if (health == 0)
+            {
+                Die();
+            }
         }
     }
 }

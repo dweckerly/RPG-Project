@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\Stats\Progression.cs" />
      <Compile Include="Assets\Scripts\Attributes\HealthDisplay.cs" />
      <Compile Include="Assets\Scripts\Combat\EnemyHealthDisplay.cs" />
+     <Compile Include="Assets\Scripts\Attributes\Experience.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
