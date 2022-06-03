@@ -19,6 +19,10 @@ MonoBehaviour:
       startingValue: 100
       percentageIncrease: 0.2
       baseAdded: 10
+    - stat: 2
+      startingValue: 10
+      percentageIncrease: 0.2
+      baseAdded: 5
   - characterClass: 1
     stats:
     - stat: 0
@@ -26,6 +30,6 @@ MonoBehaviour:
       percentageIncrease: 0.1
       baseAdded: 5
     - stat: 1
-      startingValue: 5
+      startingValue: 10
       percentageIncrease: 0.5
-      baseAdded: 5
+      baseAdded: 10

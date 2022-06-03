@@ -45,7 +45,7 @@ namespace RPG.Stats
         }
 
         [System.Serializable]
-        class StatAttribute 
+        class StatAttribute
         {
             public Stat stat;
             [SerializeField] int startingValue;
