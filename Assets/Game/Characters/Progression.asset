@@ -21,7 +21,7 @@ MonoBehaviour:
       baseAdded: 10
     - stat: 2
       startingValue: 10
-      percentageIncrease: 0.2
+      percentageIncrease: 2
       baseAdded: 5
   - characterClass: 1
     stats:
