@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace RPG.Stats
@@ -6,25 +7,34 @@ namespace RPG.Stats
     public class Progression : ScriptableObject
     {
         [SerializeField] ProgressionCharacterClass[] characterClasses = null;
+        Dictionary<CharacterClass, Dictionary<Stat, StatAttribute>> classLookup = null;
 
         public float GetStat(Stat stat, CharacterClass characterClass, int level)
         {
-            foreach(ProgressionCharacterClass pcc in characterClasses) 
+            BuildLoookup();
+            StatAttribute sa = classLookup[characterClass][stat];
+            if(sa == null) return 0;
+            float statValue = sa.GetStartingValue();
+            for (int i = 0; i < level; i++)
             {
-                if(pcc.characterClass != characterClass) continue;
+                statValue += (i * sa.GetBaseAdded()) + (statValue * sa.GetPercentageIncrease());
+            }
+            return statValue;
+        }
+
+        public void BuildLoookup()
+        {
+            if(classLookup != null) return;
+            classLookup = new Dictionary<CharacterClass, Dictionary<Stat, StatAttribute>>();
+            foreach (ProgressionCharacterClass pcc in characterClasses)
+            {
+                Dictionary<Stat, StatAttribute> statTable = new Dictionary<Stat, StatAttribute>();
                 foreach (StatAttribute sa in pcc.stats)
                 {
-                    if(sa.stat != stat) continue;
-                    StatAttribute targetSA = sa;
-                    float statValue = targetSA.GetStartingValue();
-                    for (int i = 0; i < level; i++)
-                    {
-                        statValue += (i * targetSA.GetBaseAdded()) + (statValue * targetSA.GetPercentageIncrease());
-                    }
-                    return statValue;
+                    statTable.Add(sa.stat, sa); 
                 }
+                classLookup.Add(pcc.characterClass, statTable);
             }
-            return 0;
         }
 
         [System.Serializable]
