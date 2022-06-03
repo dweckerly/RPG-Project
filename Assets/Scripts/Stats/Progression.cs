@@ -7,19 +7,26 @@ namespace RPG.Stats
     {
         [SerializeField] ProgressionCharacterClass[] characterClasses = null;
 
-        public float GetHealth(CharacterClass characterClass, int level)
+        public float GetStat(CharacterClass characterClass, int level, Stat stat)
         {
             foreach(ProgressionCharacterClass pcc in characterClasses) 
             {
                 if(pcc.characterClass == characterClass)
                 {
-                    HealthProperties hp = pcc.healthProperties;
-                    float healthStat = hp.GetStartingValue();
-                    for(int i = 0; i < level; i++)
+                    foreach (StatAttribute sa in pcc.stats)
                     {
-                        healthStat += (i * hp.GetBaseAdded()) + (healthStat * hp.GetPercentageIncrease());
+                        if(sa.stat == stat)
+                        {
+                            StatAttribute targetSA = sa;
+                            float startingValue = targetSA.GetStartingValue();
+                            for (int i = 0; i < level; i++)
+                            {
+                                startingValue += (i * targetSA.GetBaseAdded()) + (startingValue * targetSA.GetPercentageIncrease());
+                            }
+                            return startingValue;
+                        }
+                        
                     }
-                    return healthStat;
                 }
             }
             return 0;
@@ -29,12 +36,13 @@ namespace RPG.Stats
         class ProgressionCharacterClass
         {
             public CharacterClass characterClass;
-            public HealthProperties healthProperties;
+            public StatAttribute[] stats;
         }
 
         [System.Serializable]
-        class HealthProperties
+        class StatAttribute 
         {
+            public Stat stat;
             [SerializeField] int startingValue;
             [SerializeField] float percentageIncrease;
             [SerializeField] int baseAdded;
