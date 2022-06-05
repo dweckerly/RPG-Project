@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Attributes;
+using RPG.Stats;
 
 namespace RPG.Combat 
 {
@@ -33,7 +34,7 @@ namespace RPG.Combat
 
             this.target = target;
             this.source = source;
-            this.damage = damage;
+            this.damage = GetComponent<BaseStats>().GetDamage();
 
             Destroy(gameObject, maxLifeTime);
         }

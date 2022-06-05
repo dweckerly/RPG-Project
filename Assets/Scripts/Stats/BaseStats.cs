@@ -44,6 +44,11 @@ namespace RPG.Stats
             return progression.GetStat(Stat.Health, characterClass, GetLevel());
         }
 
+        public float GetDamage()
+        {
+            return progression.GetStat(Stat.Damage, characterClass, GetLevel()) + GetAdditiveModifier(Stat.Damage);
+        }
+
         public float GetExperienceReward()
         {
             return progression.GetStat(Stat.ExperienceReward, characterClass, GetLevel());
@@ -77,6 +82,19 @@ namespace RPG.Stats
                 if(experienceNeeded > currentXP) return level;
             }
             return MAX_LEVEL;
+        }
+
+        private float GetAdditiveModifier(Stat stat)
+        {
+            float total = 0;
+            foreach(IModifierProvider provider in GetComponents<IModifierProvider>())
+            {
+                foreach(float modifier in provider.GetAdditiveModifier(stat))
+                {
+                    total += modifier;
+                }
+            }
+            return total;
         }
     }
 }
