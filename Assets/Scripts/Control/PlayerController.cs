@@ -50,7 +50,7 @@ namespace RPG.Control
                 SetCursor(CursorType.None);
                 return;
             }
-            if(InteractWithCombat()) return;
+            if(InteractWithComponent()) return;
             if(InteractWithMovement()) return;
             SetCursor(CursorType.None);
         }
@@ -60,6 +60,24 @@ namespace RPG.Control
             if (EventSystem.current.IsPointerOverGameObject()) {
                 SetCursor(CursorType.UI);
                 return true;
+            }
+            return false;
+        }
+
+        private bool InteractWithComponent()
+        {
+            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
+            foreach (RaycastHit hit in hits)
+            {
+                IRaycastable[] raycastables = hit.transform.GetComponents<IRaycastable>();
+                foreach(IRaycastable raycastable in raycastables)
+                {
+                    if (raycastable.HandleRaycast(this))
+                    {
+                        SetCursor(CursorType.Combat);
+                        return true;
+                    }
+                }
             }
             return false;
         }
@@ -75,24 +93,6 @@ namespace RPG.Control
                     mover.StartMoveAction(hit.point, 1f);
                 }
                 SetCursor(CursorType.Movement);
-                return true;
-            }
-            return false;
-        }
-
-        private bool InteractWithCombat() 
-        {
-            RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
-            foreach(RaycastHit hit in hits) 
-            {
-                CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                if(target == null) continue;
-                if(!fighter.CanAttack(target.gameObject)) continue;
-                if(Input.GetMouseButton(0))
-                {
-                    fighter.Attack(target.gameObject);                    
-                }
-                SetCursor(CursorType.Combat);
                 return true;
             }
             return false;
