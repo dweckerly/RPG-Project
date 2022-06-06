@@ -12,9 +12,13 @@ namespace RPG.Attributes
 
         BaseStats baseStats;
 
-        private void Start() 
+        private void Awake() 
         {
             baseStats = GetComponent<BaseStats>();
+        }
+
+        private void Start() 
+        {
             baseStats.onLevelUp += RegenerateHealth;
             if(healthPoints < 0) healthPoints = baseStats.GetHealth();            
         }

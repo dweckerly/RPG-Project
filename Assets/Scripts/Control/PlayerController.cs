@@ -15,7 +15,7 @@ namespace RPG.Control
         Fighter fighter;
         Health health;
 
-        void Start()
+        private void Awake() 
         {
             mover = GetComponent<Mover>();
             fighter = GetComponent<Fighter>();

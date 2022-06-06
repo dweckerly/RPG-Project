@@ -17,11 +17,26 @@ namespace RPG.Stats
         int currentLevel = 0;
         const int MAX_LEVEL = 100;
 
+        Experience experience;
+
+        private void Awake() 
+        {
+            experience = GetComponent<Experience>();
+        }
+
+        private void OnEnable()
+        {
+            if (experience != null) experience.onExperienceGained += UpdateLevel;
+        }
+
+        private void OnDisable() 
+        {
+            if (experience != null) experience.onExperienceGained -= UpdateLevel;
+        }
+
         private void Start() 
         {
-            currentLevel = GetLevel();
-            Experience experience = GetComponent<Experience>();
-            if(experience != null) experience.onExperienceGained += UpdateLevel;
+            currentLevel = GetLevel();            
         }
 
         private void UpdateLevel()
@@ -73,7 +88,6 @@ namespace RPG.Stats
 
         public int CalculateLevel()
         {
-            Experience experience = GetComponent<Experience>();
             if(experience == null) return startingLevel;
             float currentXP = experience.GetExperiencePoints();
             float experienceNeeded = progression.GetStat(Stat.ExperienceToLevel, characterClass, 0);
