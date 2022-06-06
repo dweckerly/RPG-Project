@@ -10,6 +10,7 @@ namespace RPG.Stats
         [SerializeField] CharacterClass characterClass;
         [SerializeField] Progression progression = null;
         [SerializeField] GameObject levelUpEffect;
+        [SerializeField] bool shouldUseModifiers = false;
 
         public event Action onLevelUp;
 
@@ -86,6 +87,7 @@ namespace RPG.Stats
 
         private float GetAdditiveModifier(Stat stat)
         {
+            if (!shouldUseModifiers) return 0;
             float total = 0;
             foreach(IModifierProvider provider in GetComponents<IModifierProvider>())
             {
@@ -99,6 +101,7 @@ namespace RPG.Stats
 
         private float GetPercentageModifier(Stat stat) 
         {
+            if (!shouldUseModifiers) return 0;
             float total = 0;
             foreach (IModifierProvider provider in GetComponents<IModifierProvider>())
             {
