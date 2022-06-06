@@ -15,5 +15,10 @@ namespace RPG.Combat
             if (Input.GetMouseButton(0)) controller.GetComponent<Fighter>().Attack(gameObject);
             return true;
         }
+
+        public CursorType GetCursorType()
+        {
+            return CursorType.Combat;
+        }
     }
 }

@@ -17,14 +17,6 @@ namespace RPG.Control
         Fighter fighter;
         Health health;
 
-        enum CursorType
-        {
-            None,
-            Movement,
-            Combat,
-            UI
-        }
-
         [System.Serializable]
         struct CursorMapping
         {
