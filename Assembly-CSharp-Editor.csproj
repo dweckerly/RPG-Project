@@ -36,8 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\FlatKit\Shaders\Editor\StylizedSurfaceEditor.cs" />
-     <Compile Include="Assets\FlatKit\Shaders\GradientSkybox\Editor\GradientSkyboxEditor.cs" />
+     <Compile Include="Assets\Asset Packs\FlatKit\Shaders\Editor\StylizedSurfaceEditor.cs" />
+     <Compile Include="Assets\Asset Packs\FlatKit\Shaders\GradientSkybox\Editor\GradientSkyboxEditor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\2021.3.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

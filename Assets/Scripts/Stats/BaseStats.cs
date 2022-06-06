@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using RPG.Utils;
 
 namespace RPG.Stats
 {
@@ -14,7 +15,7 @@ namespace RPG.Stats
 
         public event Action onLevelUp;
 
-        int currentLevel = 0;
+        LazyValue<int> currentLevel;
         const int MAX_LEVEL = 100;
 
         Experience experience;
@@ -22,6 +23,7 @@ namespace RPG.Stats
         private void Awake() 
         {
             experience = GetComponent<Experience>();
+            currentLevel = new LazyValue<int>(CalculateLevel);
         }
 
         private void OnEnable()
@@ -36,15 +38,15 @@ namespace RPG.Stats
 
         private void Start() 
         {
-            currentLevel = GetLevel();            
+            currentLevel.ForceInit();
         }
 
         private void UpdateLevel()
         {
             int newLevel = CalculateLevel();
-            if(newLevel > currentLevel) 
+            if(newLevel > currentLevel.value) 
             {
-                currentLevel = newLevel;
+                currentLevel.value = newLevel;
                 LevelUpEffect();
                 onLevelUp();
             }
@@ -82,8 +84,7 @@ namespace RPG.Stats
 
         public int GetLevel()
         {
-            if(currentLevel < 1) currentLevel = CalculateLevel();
-            return currentLevel;
+            return currentLevel.value;
         }
 
         public int CalculateLevel()
