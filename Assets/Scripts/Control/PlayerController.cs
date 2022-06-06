@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 using RPG.Movement;
 using RPG.Combat;
 using RPG.Attributes;
+using System;
 
 namespace RPG.Control 
 {
@@ -19,7 +21,8 @@ namespace RPG.Control
         {
             None,
             Movement,
-            Combat
+            Combat,
+            UI
         }
 
         [System.Serializable]
@@ -41,10 +44,24 @@ namespace RPG.Control
 
         void Update()
         {
-            if(health.isDead()) return;
+            if(InteractWithUI()) return;
+            if(health.isDead()) 
+            {
+                SetCursor(CursorType.None);
+                return;
+            }
             if(InteractWithCombat()) return;
             if(InteractWithMovement()) return;
             SetCursor(CursorType.None);
+        }
+
+        private bool InteractWithUI()
+        {
+            if (EventSystem.current.IsPointerOverGameObject()) {
+                SetCursor(CursorType.UI);
+                return true;
+            }
+            return false;
         }
 
         private bool InteractWithMovement()
