@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Cinematics\CinematicTrigger.cs" />
      <Compile Include="Assets\Scripts\Combat\Weapon.cs" />
      <Compile Include="Assets\Scripts\Stats\Experience.cs" />
+     <Compile Include="Assets\Scripts\Stats\IModifierProvider.cs" />
      <Compile Include="Assets\Scripts\SceneManagement\Portal.cs" />
      <Compile Include="Assets\Scripts\Stats\LevelDisplay.cs" />
      <Compile Include="Assets\Scripts\Core\PersistentObjectSpawner.cs" />
@@ -76,7 +77,6 @@
      <Compile Include="Assets\Scripts\Attributes\Health.cs" />
      <Compile Include="Assets\Scripts\SceneManagement\SavingWrapper.cs" />
      <Compile Include="Assets\Scripts\Core\IAction.cs" />
-     <Compile Include="Assets\Scripts\Stats\IModifierProvider.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

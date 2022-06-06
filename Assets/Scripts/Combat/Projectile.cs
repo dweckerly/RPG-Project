@@ -34,7 +34,7 @@ namespace RPG.Combat
 
             this.target = target;
             this.source = source;
-            this.damage = GetComponent<BaseStats>().GetDamage();
+            this.damage = damage;
 
             Destroy(gameObject, maxLifeTime);
         }
