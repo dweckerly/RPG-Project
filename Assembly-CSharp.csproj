@@ -36,62 +36,69 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Stats\CharacterClass.cs" />
+     <Compile Include="Assets\Asset Packs\Epic Toon FX\Scripts\ETFXLightFade.cs" />
+     <Compile Include="Assets\Scripts\SceneManagement\Fader.cs" />
+     <Compile Include="Assets\Asset Packs\FlatKit\Scripts\UvScroller.cs" />
+     <Compile Include="Assets\Scripts\Saving\ISaveable.cs" />
+     <Compile Include="Assets\Scripts\Utils\LazyValue.cs" />
+     <Compile Include="Assets\Scripts\Control\CursorType.cs" />
+     <Compile Include="Assets\Scripts\Control\AIController.cs" />
+     <Compile Include="Assets\Scripts\Cinematics\CinematicTrigger.cs" />
+     <Compile Include="Assets\Scripts\Combat\Weapon.cs" />
+     <Compile Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\RenderFeatures\Common\BlitTexturePass.cs" />
+     <Compile Include="Assets\Scripts\SceneManagement\Portal.cs" />
+     <Compile Include="Assets\Scripts\Stats\LevelDisplay.cs" />
+     <Compile Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\RenderFeatures\Fog\FogSettings.cs" />
+     <Compile Include="Assets\Scripts\Core\PersistentObjectSpawner.cs" />
+     <Compile Include="Assets\Scripts\Cinematics\CinematicControlHelper.cs" />
+     <Compile Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\RenderFeatures\Fog\FlatKitFog.cs" />
+     <Compile Include="Assets\Scripts\Saving\SaveableEntity.cs" />
+     <Compile Include="Assets\Scripts\Attributes\HealthDisplay.cs" />
+     <Compile Include="Assets\Scripts\Control\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Saving\SavingSystem.cs" />
+     <Compile Include="Assets\Scripts\Attributes\Health.cs" />
+     <Compile Include="Assets\Scripts\SceneManagement\SavingWrapper.cs" />
      <Compile Include="Assets\Asset Packs\Epic Toon FX\Scripts\ETFXPitchRandomizer.cs" />
      <Compile Include="Assets\Scripts\Combat\Projectile.cs" />
      <Compile Include="Assets\Scripts\Stats\XPDisplay.cs" />
-     <Compile Include="Assets\Scripts\Stats\CharacterClass.cs" />
-     <Compile Include="Assets\Asset Packs\Epic Toon FX\Scripts\ETFXLightFade.cs" />
+     <Compile Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\RenderFeatures\Outline\FlatKitDepthNormals.cs" />
      <Compile Include="Assets\Scripts\Combat\EnemyHealthDisplay.cs" />
-     <Compile Include="Assets\Scripts\SceneManagement\Fader.cs" />
      <Compile Include="Assets\Scripts\Core\DestroyAfterEffect.cs" />
+     <Compile Include="Assets\Scripts\Control\IRaycastable.cs" />
      <Compile Include="Assets\Scripts\Control\PatrolPath.cs" />
-     <Compile Include="Assets\Asset Packs\FlatKit\Scripts\UvScroller.cs" />
      <Compile Include="Assets\Asset Packs\Epic Toon FX\Scripts\ETFXRotation.cs" />
-     <Compile Include="Assets\Scripts\Saving\ISaveable.cs" />
+     <Compile Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\RenderFeatures\Outline\FlatKitOutline.cs" />
      <Compile Include="Assets\Scripts\Movement\Mover.cs" />
      <Compile Include="Assets\Scripts\Combat\WeaponPickup.cs" />
-     <Compile Include="Assets\Scripts\Control\AIController.cs" />
      <Compile Include="Assets\Scripts\Combat\Fighter.cs" />
      <Compile Include="Assets\Scripts\Core\FollowCamera.cs" />
-     <Compile Include="Assets\Scripts\Cinematics\CinematicTrigger.cs" />
-     <Compile Include="Assets\Scripts\Combat\Weapon.cs" />
+     <Compile Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\Water\Scripts\Buoyancy.cs" />
+     <Compile Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\RenderFeatures\Outline\OutlineSettings.cs" />
      <Compile Include="Assets\Scripts\Stats\Experience.cs" />
      <Compile Include="Assets\Scripts\Stats\IModifierProvider.cs" />
-     <Compile Include="Assets\Scripts\SceneManagement\Portal.cs" />
-     <Compile Include="Assets\Scripts\Stats\LevelDisplay.cs" />
-     <Compile Include="Assets\Scripts\Core\PersistentObjectSpawner.cs" />
-     <Compile Include="Assets\Scripts\Cinematics\CinematicControlHelper.cs" />
      <Compile Include="Assets\Scripts\Core\ActionScheduler.cs" />
-     <Compile Include="Assets\Scripts\Saving\SaveableEntity.cs" />
      <Compile Include="Assets\Scripts\Combat\CombatTarget.cs" />
-     <Compile Include="Assets\Asset Packs\FlatKit\[Render Pipeline] Built-in\ImageEffects\Scripts\OutlineImageEffect.cs" />
      <Compile Include="Assets\Scripts\Stats\Progression.cs" />
-     <Compile Include="Assets\Asset Packs\FlatKit\[Render Pipeline] Built-in\ImageEffects\Scripts\FogImageEffect.cs" />
      <Compile Include="Assets\Scripts\Stats\Stats.cs" />
-     <Compile Include="Assets\Scripts\Attributes\HealthDisplay.cs" />
      <Compile Include="Assets\Scripts\Saving\SerializableVector3.cs" />
-     <Compile Include="Assets\Scripts\Control\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\Saving\SavingSystem.cs" />
      <Compile Include="Assets\Scripts\Stats\BaseStats.cs" />
      <Compile Include="Assets\Scripts\Stats\XPNeededDisplay.cs" />
-     <Compile Include="Assets\Scripts\Attributes\Health.cs" />
-     <Compile Include="Assets\Scripts\SceneManagement\SavingWrapper.cs" />
      <Compile Include="Assets\Scripts\Core\IAction.cs" />
-     <Compile Include="Assets\Scripts\Utils\LazyValue.cs" />
-     <Compile Include="Assets\Scripts\Control\IRaycastable.cs" />
-     <Compile Include="Assets\Scripts\Control\CursorType.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Asset Packs\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-     <None Include="Assets\Asset Packs\FlatKit\[Render Pipeline] Built-in\ImageEffects\Resources\OutlinePlus.shader" />
+     <None Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\RenderFeatures\Common\FlatKitCopyTexture.shader" />
+     <None Include="Assets\Asset Packs\FlatKit\Shaders\StylizedSurface\LibraryUrp\LitForwardPass_DR.hlsl" />
      <None Include="Assets\Asset Packs\Epic Toon FX\Prefabs\Combat\Combat FX.txt" />
-     <None Include="Assets\Asset Packs\FlatKit\Shaders\StylizedSurface\DustyroomTerrainSplatmapCommon.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\Asset Packs\FlatKit\Shaders\StylizedSurface\LibraryUrp\TerrainLitPasses_DR.hlsl" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\Asset Packs\FlatKit\Shaders\StylizedSurface\LibraryUrp\StylizedInput.hlsl" />
      <None Include="Assets\Asset Packs\FlatKit\Shaders\GradientSkybox\GradientSkybox.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-     <None Include="Assets\Asset Packs\FlatKit\Shaders\StylizedSurface\DustyroomStylizedLighting.cginc" />
+     <None Include="Assets\Asset Packs\FlatKit\Shaders\StylizedSurface\LibraryUrp\Lighting_DR.hlsl" />
      <None Include="Assets\Asset Packs\FlatKit\Shaders\StylizedSurface\StylizedSurfaceOutline.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\Asset Packs\Epic Toon FX\Prefabs\Interactive\Interactive FX.txt" />
@@ -101,20 +108,21 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-     <None Include="Assets\Asset Packs\FlatKit\[Render Pipeline] Built-in\ImageEffects\Resources\FogPlus.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-     <None Include="Assets\Asset Packs\FlatKit\[READ ME].txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-     <None Include="Assets\Asset Packs\FlatKit\Shaders\StylizedSurface\StylizedSurfaceCutout.shader" />
+     <None Include="Assets\Asset Packs\FlatKit\Shaders\StylizedSurface\TerrainLitAdd_DR.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\RenderFeatures\Outline\FlatKitOutline.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\RenderFeatures\Fog\FlatKitFog.shader" />
      <None Include="Assets\Asset Packs\FlatKit\Shaders\StylizedSurface\StylizedSurface.shader" />
      <None Include="Assets\Asset Packs\FlatKit\Shaders\LightPlane.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\Asset Packs\FlatKit\Shaders\StylizedSurface\Terrain.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+     <None Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\Water\Shaders\Water.shader" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\2021.3.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -357,6 +365,21 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>D:\Unity\2021.3.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+        <HintPath>D:\Unity\Games\RPG Project\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+        <HintPath>D:\Unity\Games\RPG Project\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+        <HintPath>D:\Unity\Games\RPG Project\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil">
+        <HintPath>D:\Unity\Games\RPG Project\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Rocks">
+        <HintPath>D:\Unity\Games\RPG Project\Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
         <HintPath>D:\Unity\Games\RPG Project\Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
@@ -736,17 +759,14 @@
     <Reference Include="System.Xml.Serialization">
         <HintPath>D:\Unity\2021.3.2f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Recorder.Editor">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Recorder.Base">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -757,11 +777,86 @@
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Formats.Fbx.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Formats.Fbx.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Fbx">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Autodesk.Fbx.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.EditorCoroutines.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Sequences.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Sequences.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Sequences">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Sequences.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Runtime">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Formats.Fbx.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Formats.Alembic.Runtime">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Formats.Alembic.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="PPv2URPConverters">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Formats.Fbx.Editor">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Formats.Fbx.Editor.dll</HintPath>
+    <Reference Include="Autodesk.Fbx.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Autodesk.Fbx.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -772,35 +867,17 @@
     <Reference Include="Unity.TextMeshPro">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    <Reference Include="Unity.Burst.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.Fbx.Editor">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Autodesk.Fbx.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.Fbx">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Autodesk.Fbx.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
@@ -808,23 +885,17 @@
     <Reference Include="Unity.VisualScripting.Core">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.EditorCoroutines.Editor">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Sequences.Editor">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Sequences.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    <Reference Include="Unity.Mathematics">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    <Reference Include="Unity.Burst">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Sequences">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Sequences.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Universal.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -832,14 +903,11 @@
     <Reference Include="Unity.Services.Core.Environments">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Formats.Alembic.Runtime">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Formats.Alembic.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Formats.Fbx.Runtime">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Formats.Fbx.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
@@ -847,11 +915,11 @@
     <Reference Include="Unity.Formats.Alembic.Editor">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Formats.Alembic.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.State">
         <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Recorder">
-        <HintPath>D:\Unity\Games\RPG Project\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
