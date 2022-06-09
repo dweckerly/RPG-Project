@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using RPG.Core;
 using RPG.Saving;
 using RPG.Stats;
@@ -8,6 +9,10 @@ namespace RPG.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
+        [System.Serializable]
+        class TakeDamageEvent : UnityEvent<float> { }
+        [SerializeField] TakeDamageEvent takeDamage;
+
         LazyValue<float> healthPoints;
         bool dead = false;
 
@@ -47,6 +52,7 @@ namespace RPG.Attributes
         public void TakeDamage(GameObject source, float amount)
         {
             print(gameObject.name + " took " + amount + " damage from " + source.name);
+            takeDamage.Invoke(amount);
             if (dead) return;
             healthPoints.value = Mathf.Max(healthPoints.value - amount, 0);
             if (healthPoints.value == 0)
