@@ -2438,7 +2438,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2093073355320485778, guid: acf0a1a629d601a4db82fdf57f6185ab, type: 3}
   m_PrefabInstance: {fileID: 2093073355931058614}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2017031927
+--- !u!114 &2017031924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2854,7 +2854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2093073356041835260, guid: acf0a1a629d601a4db82fdf57f6185ab, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7775701
+      value: 1.7777778
       objectReference: {fileID: 0}
     - target: {fileID: 2167783730711841767, guid: acf0a1a629d601a4db82fdf57f6185ab, type: 3}
       propertyPath: defaultWeaponName
@@ -2864,7 +2864,8 @@ PrefabInstance:
       propertyPath: uniqueIdentifier
       value: 37809b44-7414-4ea3-ba85-3cf421f937a2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9087506780233678229, guid: acf0a1a629d601a4db82fdf57f6185ab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: acf0a1a629d601a4db82fdf57f6185ab, type: 3}
 --- !u!1001 &4013549935316368555
 PrefabInstance:
