@@ -12,6 +12,7 @@ namespace RPG.Attributes
         [System.Serializable]
         class TakeDamageEvent : UnityEvent<float> { }
         [SerializeField] TakeDamageEvent takeDamage;
+        [SerializeField] UnityEvent onDie;
 
         LazyValue<float> healthPoints;
         bool dead = false;
@@ -57,6 +58,7 @@ namespace RPG.Attributes
             healthPoints.value = Mathf.Max(healthPoints.value - amount, 0);
             if (healthPoints.value == 0)
             {
+                onDie.Invoke();
                 Die();
                 AwardExperience(source);
             }
