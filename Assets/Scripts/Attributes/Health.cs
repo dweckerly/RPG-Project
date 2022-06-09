@@ -74,7 +74,12 @@ namespace RPG.Attributes
 
         public float GetHealthPercentage()
         {
-            return 100 * (healthPoints.value / baseStats.GetHealth());
+            return 100 * GetFraction();
+        }
+
+        public float GetFraction()
+        {
+            return (healthPoints.value / baseStats.GetHealth());
         }
 
         private void AwardExperience(GameObject source)
