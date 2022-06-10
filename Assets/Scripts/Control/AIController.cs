@@ -16,6 +16,7 @@ namespace RPG.Control
         [SerializeField] float patrolSpeedFraction = 0.2f;
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 5f;
+        [SerializeField] float shoutDistance = 10f;
         [SerializeField] float aggroCoolDownTime = 7.5f;
         [SerializeField] PatrolPath patrolPath;
         [SerializeField] float waypointTolerance = 3f;
@@ -121,6 +122,17 @@ namespace RPG.Control
         {
             timeSinceLastSawPlayer = 0;
             fighter.Attack(player);
+            AggravateNearbyEnemies();
+        }
+
+        private void AggravateNearbyEnemies()
+        {
+            RaycastHit[] hits = Physics.SphereCastAll(transform.position, shoutDistance, Vector3.up);
+            foreach(RaycastHit hit in hits)
+            {
+                AIController aIController = hit.collider.GetComponent<AIController>();
+                if(aIController != null) aIController.Aggravate();
+            }
         }
 
         private bool isAggravated()
