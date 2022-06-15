@@ -377,6 +377,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2093073355758351394}
     m_Modifications:
+    - target: {fileID: -6074879252227456276, guid: f3fee543e1f5f9d4b875437dfe3fb617, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 6396827143253490331}
+    - target: {fileID: -6074879252227456276, guid: f3fee543e1f5f9d4b875437dfe3fb617, type: 3}
+      propertyPath: rotationSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3813671407558320020, guid: f3fee543e1f5f9d4b875437dfe3fb617, type: 3}
       propertyPath: m_Name
       value: FollowCamera
@@ -431,7 +439,7 @@ PrefabInstance:
       objectReference: {fileID: 6396827143253490331}
     - target: {fileID: 3813671407558320022, guid: f3fee543e1f5f9d4b875437dfe3fb617, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7769376
+      value: 1.7779887
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3fee543e1f5f9d4b875437dfe3fb617, type: 3}
