@@ -22,6 +22,11 @@ namespace RPG.Core
                 transform.RotateAround(target.position, new Vector3(0.0f, 1.0f, 0.0f), Time.deltaTime * rotationSpeed);
             if (Input.GetKey(KeyCode.D)) 
                 transform.RotateAround(target.position, new Vector3(0.0f, -1.0f, 0.0f), Time.deltaTime * rotationSpeed);
+            // May implement up and down rotation but need to restrict input to one at a time and clamping.
+            // if (Input.GetKey(KeyCode.W))
+            //     transform.RotateAround(target.position, new Vector3(1.0f, 0.0f, 0.0f), Time.deltaTime * rotationSpeed);
+            // if (Input.GetKey(KeyCode.S))
+            //     transform.RotateAround(target.position, new Vector3(-1.0f, 0.0f, 0.0f), Time.deltaTime * rotationSpeed);
             if (Input.GetAxis("Mouse ScrollWheel") != 0f)
             {
                 CinemachineComponentBase componentBase = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent(CinemachineCore.Stage.Body);
