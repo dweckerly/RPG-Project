@@ -26,7 +26,7 @@ namespace RPG.SceneManagement
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.S)) Save();
+            //if (Input.GetKeyDown(KeyCode.S)) Save();
             if (Input.GetKeyDown(KeyCode.L)) Load();
             if (Input.GetKeyDown(KeyCode.Delete)) Delete();
         }

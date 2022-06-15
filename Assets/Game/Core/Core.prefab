@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2093073355293209389}
   - component: {fileID: 2093073355293209388}
+  - component: {fileID: 2014983147301335346}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -94,6 +95,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2014983147301335346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093073355293209391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &2093073355758351397
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 6396827143253490331}
     - target: {fileID: 3813671407558320022, guid: f3fee543e1f5f9d4b875437dfe3fb617, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7779887
+      value: 1.778157
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3fee543e1f5f9d4b875437dfe3fb617, type: 3}

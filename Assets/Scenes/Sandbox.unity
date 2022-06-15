@@ -3251,6 +3251,10 @@ PrefabInstance:
       value: -24.351748
       objectReference: {fileID: 0}
     - target: {fileID: 2093073356414951869, guid: acf0a1a629d601a4db82fdf57f6185ab, type: 3}
+      propertyPath: m_XDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093073356414951869, guid: acf0a1a629d601a4db82fdf57f6185ab, type: 3}
       propertyPath: m_CameraDistance
       value: 10
       objectReference: {fileID: 0}
