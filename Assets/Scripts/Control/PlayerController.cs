@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using RPG.Movement;
 using RPG.Combat;
 using RPG.Attributes;
+using RPG.Inventories;
 using System;
 
 namespace RPG.Control 
@@ -16,6 +17,7 @@ namespace RPG.Control
         Mover mover;
         Fighter fighter;
         Health health;
+        ActionStore actionStore;
 
         [System.Serializable]
         struct CursorMapping
@@ -37,6 +39,7 @@ namespace RPG.Control
             mover = GetComponent<Mover>();
             fighter = GetComponent<Fighter>();
             health = GetComponent<Health>();
+            actionStore = GetComponent<ActionStore>();
         }
 
         void Update()
@@ -47,9 +50,20 @@ namespace RPG.Control
                 SetCursor(CursorType.None);
                 return;
             }
+            CheckHotkeys();
             if(InteractWithComponent()) return;
             if(InteractWithMovement()) return;
             SetCursor(CursorType.None);
+        }
+
+        private void CheckHotkeys()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1)) actionStore.Use(0, gameObject);
+            if (Input.GetKeyDown(KeyCode.Alpha2)) actionStore.Use(1, gameObject);
+            if (Input.GetKeyDown(KeyCode.Alpha3)) actionStore.Use(2, gameObject);
+            if (Input.GetKeyDown(KeyCode.Alpha4)) actionStore.Use(3, gameObject);
+            if (Input.GetKeyDown(KeyCode.Alpha5)) actionStore.Use(4, gameObject);
+            if (Input.GetKeyDown(KeyCode.Alpha6)) actionStore.Use(5, gameObject);
         }
 
         private bool InteractWithUI()
