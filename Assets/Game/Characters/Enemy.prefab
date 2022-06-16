@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 1900137711, guid: fd2a7995286fe7940971ed74fe6775bd, type: 3}
       propertyPath: defaultWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: 5f9775c2d284d28408af37f4187d424d, type: 2}
+      objectReference: {fileID: 11400000, guid: 43cfbc84344dde44fa6c906ff1e50302, type: 2}
     - target: {fileID: 1900137711, guid: fd2a7995286fe7940971ed74fe6775bd, type: 3}
       propertyPath: handTransform
       value: 
@@ -198,6 +198,8 @@ MonoBehaviour:
   patrolSpeedFraction: 0.2
   chaseDistance: 5
   suspicionTime: 5
+  shoutDistance: 10
+  aggroCoolDownTime: 7.5
   patrolPath: {fileID: 0}
   waypointTolerance: 3
   waypointDwellTime: 3

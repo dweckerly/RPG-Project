@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cb9b2ba0be25234385782fec339257e, type: 3}
-  m_Name: Sword-0
+  m_Name: BEARS
   m_EditorClassIdentifier: 
-  itemID: ce26f092-c610-4757-aa29-fcf055bfe066
-  displayName: Sword
+  itemID: 31db5854-c5d0-4745-ad0f-efd242a2d8fb
+  displayName: 
   description: 
-  icon: {fileID: 21300000, guid: 42ec8a0e710138343a271d732299cfb6, type: 3}
-  pickup: {fileID: 8058862198539756677, guid: a5f1b72827c44024da7431bce34150b4, type: 3}
+  icon: {fileID: 0}
+  pickup: {fileID: 0}
   stackable: 0
   allowedEquipLocation: 5
-  animatorOverride: {fileID: 22100000, guid: 7589711a1cc63e24fa9c44420950e436, type: 2}
-  weaponPrefab: {fileID: 673848627537259486, guid: 23dc83ab6b6974648a96db34c96b243b, type: 3}
+  animatorOverride: {fileID: 0}
+  weaponPrefab: {fileID: 0}
   weaponRange: 2
-  weaponSpeed: 1.5
+  weaponSpeed: 2
   weaponDamage: 20
-  weaponPercentageBonus: 10
+  weaponPercentageBonus: 0
   isRightHanded: 1
   projectile: {fileID: 0}
