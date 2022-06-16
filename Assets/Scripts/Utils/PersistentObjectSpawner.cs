@@ -1,9 +1,10 @@
 using UnityEngine;
 
-namespace RPG.Core
+namespace RPG.Utils
 {
     public class PersistentObjectSpawner : MonoBehaviour
     {
+        [Tooltip("This prefab will only be spawned once and persisted between scenes.")]
         [SerializeField] GameObject persistentObjectPrefab;
         static bool hasSpawned = false;
 

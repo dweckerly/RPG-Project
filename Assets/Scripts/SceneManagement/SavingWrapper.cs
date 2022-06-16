@@ -38,7 +38,7 @@ namespace RPG.SceneManagement
 
         public void Load()
         {
-            savingSystem.Load(defaultSaveFile);
+            savingSystem.LoadLastScene(defaultSaveFile);
         }
 
         public void Delete()
