@@ -10,7 +10,7 @@ using RPG.Inventories;
 
 namespace RPG.Combat 
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable, IModifierProvider
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
@@ -129,16 +129,6 @@ namespace RPG.Combat
         {
             animator.ResetTrigger("attack");
             animator.SetTrigger("stopAttack");
-        }
-
-        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
-        {
-            if(stat == Stat.Damage) yield return currentWeaponConfig.GetDamage();
-        }
-
-        public IEnumerable<float> GetPercentageModifiers(Stat stat)
-        {
-            if (stat == Stat.Damage) yield return currentWeaponConfig.GetPercentageBonus();
         }
 
         public void EquipWeapon(WeaponConfig weapon)
