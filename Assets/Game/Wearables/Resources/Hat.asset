@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20eb1792e8048a46bf5c7c520a3ea3b, type: 3}
+  m_Name: Hat
+  m_EditorClassIdentifier: 
+  itemID: 6bfed41c-8d55-4702-98b3-901990dcc2c9
+  displayName: Hat
+  description: A comfy hat that protects your face from the sun.
+  icon: {fileID: 21300000, guid: b47431e0d918eeb4eb1dc79bd8e8fb50, type: 3}
+  pickup: {fileID: 2708697490760690147, guid: aa379b4dc6e559b40813a4da8b4bdd81, type: 3}
+  stackable: 0
+  allowedEquipLocation: 0
