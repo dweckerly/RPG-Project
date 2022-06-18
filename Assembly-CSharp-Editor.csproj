@@ -45,6 +45,7 @@
      <Compile Include="Assets\Asset Packs\FlatKit\[Render Pipeline] URP\Water\Editor\Tooltips.cs" />
      <Compile Include="Assets\Asset Packs\FlatKit\Shaders\Editor\Tooltips.cs" />
      <Compile Include="Assets\Asset Packs\FlatKit-Package\Utils\Readme\Editor\NetworkManager.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\Editor\DialogueEditor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\2021.3.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
