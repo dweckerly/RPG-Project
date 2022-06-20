@@ -47,9 +47,27 @@ namespace RPG.Dialogue.Editor
 
         private void OnGUI()
         {
-            if(selectedDialogue != null)
+            if (selectedDialogue != null)
             {
-                EditorGUILayout.LabelField(selectedDialogue.name);
+                foreach (DialogueNode node in selectedDialogue.GetAllNodes())
+                {
+                    EditorGUI.BeginChangeCheck();
+
+                    EditorGUILayout.LabelField("Node:");
+                    string newID = EditorGUILayout.TextField(node.uniqueId);
+                    string newText = EditorGUILayout.TextField(node.text);
+
+                    if (EditorGUI.EndChangeCheck())
+                    {
+                        Undo.RecordObject(selectedDialogue, "Update Dialogue Text");
+                        node.uniqueId = newID;
+                        node.text = newText;                        
+                    }                    
+                }                
+            }
+            else
+            {
+                EditorGUILayout.LabelField("No Dialogue Selected");
             }
         }
     }
