@@ -8,6 +8,23 @@ namespace RPG.Dialogue.Editor
 {
     public class DialogueEditor : EditorWindow
     {
+        Dialogue selectedDialogue = null;
+
+        private void OnEnable() 
+        {
+            Selection.selectionChanged += OnSelectionChanged;
+        }
+
+        private void OnSelectionChanged()
+        {
+            Dialogue newDialogue = Selection.activeObject as Dialogue;
+            if (newDialogue != null) 
+            {   
+                selectedDialogue = newDialogue;
+                Repaint();
+            }
+        }
+
         [MenuItem("Window/Dialogue Editor")]
         private static void ShowWindow()
         {
@@ -16,7 +33,7 @@ namespace RPG.Dialogue.Editor
             window.Show();
         }
 
-        [OnOpenAssetAttribute(1)]
+        [OnOpenAsset(1)]
         private static bool OnOpenAsset(int instanceID, int line)
         {
             Dialogue dialogue = EditorUtility.InstanceIDToObject(instanceID) as Dialogue;
@@ -30,7 +47,10 @@ namespace RPG.Dialogue.Editor
 
         private void OnGUI()
         {
-
+            if(selectedDialogue != null)
+            {
+                EditorGUILayout.LabelField(selectedDialogue.name);
+            }
         }
     }
 }
