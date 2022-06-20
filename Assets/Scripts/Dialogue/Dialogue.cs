@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,12 @@ namespace RPG.Dialogue
 #if UNITY_EDITOR        
         private void Awake() 
         {
-            if (nodes.Count == 0) nodes.Add(new DialogueNode());
+            if (nodes.Count == 0)
+            {
+                DialogueNode rootNode = new DialogueNode();
+                rootNode.uniqueId = Guid.NewGuid().ToString();
+                nodes.Add(rootNode);
+            }
             OnValidate();
         }
 #endif

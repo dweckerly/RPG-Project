@@ -102,7 +102,6 @@ namespace RPG.Dialogue.Editor
             GUILayout.BeginArea(node.rect, nodeStyle);
             EditorGUI.BeginChangeCheck();
 
-            EditorGUILayout.LabelField("Node:");
             string newID = EditorGUILayout.TextField(node.uniqueId);
             string newText = EditorGUILayout.TextField(node.text);
 
