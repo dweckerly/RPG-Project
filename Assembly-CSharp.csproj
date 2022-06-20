@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\Core\CameraControl.cs" />
      <Compile Include="Assets\Asset Packs\FlatKit\Scripts\UvScroller.cs" />
      <Compile Include="Assets\Asset Packs\Epic Toon FX\Demo\Scripts\ETFXTarget.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\Scripts\Combat\Weapon.cs" />
      <Compile Include="Assets\Scripts\Inventories\EquipableItem.cs" />
      <Compile Include="Assets\Scripts\Saving\ISaveable.cs" />
@@ -119,6 +120,7 @@
      <Compile Include="Assets\Scripts\Stats\IModifierProvider.cs" />
      <Compile Include="Assets\Asset Packs\Epic Toon FX\Demo\Scripts\ETFXLoopScript.cs" />
      <Compile Include="Assets\Scripts\UI\Dragging\IDragDestination.cs" />
+     <Compile Include="Assets\Scripts\Dialogue\DialogueNode.cs" />
      <Compile Include="Assets\Scripts\Core\ActionScheduler.cs" />
      <Compile Include="Assets\Asset Packs\Epic Toon FX\Demo\Scripts\ETFXEffectCycler.cs" />
      <Compile Include="Assets\Asset Packs\Epic Toon FX\Demo\Scripts\VFX Library\UICanvasManager.cs" />
@@ -134,8 +136,6 @@
      <Compile Include="Assets\Scripts\Stats\XPNeededDisplay.cs" />
      <Compile Include="Assets\Scripts\Core\IAction.cs" />
      <Compile Include="Assets\Scripts\Inventories\StatsEquipableItem.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
-     <Compile Include="Assets\Scripts\Dialogue\DialogueNode.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Asset Packs\Epic Toon FX\Prefabs\Environment\Environment FX.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
