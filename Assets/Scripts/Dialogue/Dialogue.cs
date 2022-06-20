@@ -52,5 +52,14 @@ namespace RPG.Dialogue
             }
             return result;
         }
+
+        public void CreateNode(DialogueNode parentNode)
+        {
+            DialogueNode newNode = new DialogueNode();
+            newNode.uniqueId = Guid.NewGuid().ToString();
+            parentNode.children.Add(newNode.uniqueId);
+            nodes.Add(newNode);
+            OnValidate();
+        }
     }
 }
