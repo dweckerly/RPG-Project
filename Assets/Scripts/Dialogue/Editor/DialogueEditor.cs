@@ -20,6 +20,9 @@ namespace RPG.Dialogue.Editor
         [NonSerialized] bool draggingCanvas = false;
         [NonSerialized] Vector2 draggingCanvasOffset;
 
+        const float CANVAS_SIZE = 4000;
+        const float BACKGROUND_SIZE = 50;
+
         private void OnEnable() 
         {
             Selection.selectionChanged += OnSelectionChanged;
@@ -65,33 +68,18 @@ namespace RPG.Dialogue.Editor
             if (selectedDialogue != null)
             {
                 ProcessEvents();
-                scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
-                GUILayoutUtility.GetRect(4000, 4000);
 
-                // separate foreach to keep connections drawn under nodes
-                foreach (DialogueNode node in selectedDialogue.GetAllNodes())
-                {
-                    DrawConnections(node);
-                }
-                foreach (DialogueNode node in selectedDialogue.GetAllNodes())
-                {
-                    DrawNode(node);
-                }
-                
+                scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
+                Rect canvas = GUILayoutUtility.GetRect(CANVAS_SIZE, CANVAS_SIZE);
+                Texture2D backgroundTexture = Resources.Load("background") as Texture2D;
+                Rect textCoords = new Rect(0, 0, CANVAS_SIZE / BACKGROUND_SIZE, CANVAS_SIZE / BACKGROUND_SIZE);
+                GUI.DrawTextureWithTexCoords(canvas, backgroundTexture, textCoords);
+
+                DrawConnectionsAndNodes();
+
                 EditorGUILayout.EndScrollView();
 
-                if (creatingNode != null) 
-                {
-                    Undo.RecordObject(selectedDialogue, "Added Dialogue Node");
-                    selectedDialogue.CreateNode(creatingNode);
-                    creatingNode = null;
-                }
-                if (deleteNode != null)
-                {
-                    Undo.RecordObject(selectedDialogue, "Removed Dialogue Node");
-                    selectedDialogue.DeleteNode(deleteNode);
-                    deleteNode = null;
-                }
+                HandleNodeCreationAndDeletion();
             }
             else
             {
@@ -135,6 +123,19 @@ namespace RPG.Dialogue.Editor
             }
         }
 
+        private void DrawConnectionsAndNodes()
+        {
+            // separate foreach to keep connections drawn under nodes
+            foreach (DialogueNode node in selectedDialogue.GetAllNodes())
+            {
+                DrawConnections(node);
+            }
+            foreach (DialogueNode node in selectedDialogue.GetAllNodes())
+            {
+                DrawNode(node);
+            }
+        }
+
         private void DrawNode(DialogueNode node)
         {
             GUILayout.BeginArea(node.rect, nodeStyle);
@@ -154,6 +155,36 @@ namespace RPG.Dialogue.Editor
             GUILayout.EndHorizontal();
 
             GUILayout.EndArea();
+        }
+
+        private void DrawConnections(DialogueNode node)
+        {
+            Vector3 startPosition = new Vector2(node.rect.xMax, node.rect.center.y);
+            foreach (DialogueNode childNode in selectedDialogue.GetAllChildren(node))
+            {                
+                Vector3 endPosition = new Vector2(childNode.rect.xMin, childNode.rect.center.y);
+                Vector3 controlPointOffset = new Vector2((endPosition.x - startPosition.x) * 0.8f, 0);
+                Handles.DrawBezier(
+                    startPosition, endPosition, 
+                    startPosition + controlPointOffset, endPosition - controlPointOffset, 
+                    Color.white, null, 4f);
+            }
+        }
+
+        private void HandleNodeCreationAndDeletion()
+        {
+            if (creatingNode != null)
+            {
+                Undo.RecordObject(selectedDialogue, "Added Dialogue Node");
+                selectedDialogue.CreateNode(creatingNode, Event.current.mousePosition + draggingOffset);
+                creatingNode = null;
+            }
+            if (deleteNode != null)
+            {
+                Undo.RecordObject(selectedDialogue, "Removed Dialogue Node");
+                selectedDialogue.DeleteNode(deleteNode);
+                deleteNode = null;
+            }
         }
 
         private void DrawLinkButtons(DialogueNode node)
@@ -183,20 +214,6 @@ namespace RPG.Dialogue.Editor
                     linkingParentNode.children.Add(node.uniqueId);
                     linkingParentNode = null;
                 }
-            }
-        }
-
-        private void DrawConnections(DialogueNode node)
-        {
-            Vector3 startPosition = new Vector2(node.rect.xMax, node.rect.center.y);
-            foreach (DialogueNode childNode in selectedDialogue.GetAllChildren(node))
-            {                
-                Vector3 endPosition = new Vector2(childNode.rect.xMin, childNode.rect.center.y);
-                Vector3 controlPointOffset = new Vector2((endPosition.x - startPosition.x) * 0.8f, 0);
-                Handles.DrawBezier(
-                    startPosition, endPosition, 
-                    startPosition + controlPointOffset, endPosition - controlPointOffset, 
-                    Color.white, null, 4f);
             }
         }
 

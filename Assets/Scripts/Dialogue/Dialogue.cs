@@ -53,10 +53,11 @@ namespace RPG.Dialogue
             return result;
         }
 
-        public void CreateNode(DialogueNode parentNode)
+        public void CreateNode(DialogueNode parentNode, Vector2 position)
         {
             DialogueNode newNode = new DialogueNode();
             newNode.uniqueId = Guid.NewGuid().ToString();
+            newNode.rect.position = position;
             parentNode.children.Add(newNode.uniqueId);
             nodes.Add(newNode);
             OnValidate();
