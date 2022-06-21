@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 namespace RPG.Dialogue
 {
@@ -16,9 +17,7 @@ namespace RPG.Dialogue
         {
             if (nodes.Count == 0)
             {
-                DialogueNode rootNode = new DialogueNode();
-                rootNode.uniqueId = Guid.NewGuid().ToString();
-                nodes.Add(rootNode);
+                CreateNode(null, new Vector2(0, 0));
             }
             OnValidate();
         }
@@ -55,19 +54,21 @@ namespace RPG.Dialogue
 
         public void CreateNode(DialogueNode parentNode, Vector2 position)
         {
-            DialogueNode newNode = new DialogueNode();
+            DialogueNode newNode = CreateInstance<DialogueNode>();
             newNode.uniqueId = Guid.NewGuid().ToString();
             newNode.rect.position = position;
-            parentNode.children.Add(newNode.uniqueId);
+            Undo.RegisterCreatedObjectUndo(newNode, "Created Dialogue Node");
+            if (parentNode != null) parentNode.children.Add(newNode.uniqueId);            
             nodes.Add(newNode);
             OnValidate();
         }
 
         public void DeleteNode(DialogueNode nodeToDelete)
         {
-            nodes.Remove(nodeToDelete);
+            nodes.Remove(nodeToDelete);            
             OnValidate();
             PruneChildren(nodeToDelete);
+            Undo.DestroyObjectImmediate(nodeToDelete);
         }
 
         private void PruneChildren(DialogueNode nodeToDelete)

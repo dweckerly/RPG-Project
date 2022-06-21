@@ -19,6 +19,8 @@ namespace RPG.Dialogue.Editor
         Vector2 scrollPosition;
         [NonSerialized] bool draggingCanvas = false;
         [NonSerialized] Vector2 draggingCanvasOffset;
+        [NonSerialized] GUIStyle selectedNodeStyle;
+        string selectedNodeId = null;
 
         const float CANVAS_SIZE = 4000;
         const float BACKGROUND_SIZE = 50;
@@ -31,6 +33,10 @@ namespace RPG.Dialogue.Editor
             nodeStyle.normal.background = EditorGUIUtility.Load("node0") as Texture2D;
             nodeStyle.padding = new RectOffset(20, 20, 20, 20);
             nodeStyle.border = new RectOffset(12, 12, 12, 12);
+            selectedNodeStyle = new GUIStyle();
+            selectedNodeStyle.normal.background = EditorGUIUtility.Load("node0 on") as Texture2D;
+            selectedNodeStyle.padding = new RectOffset(20, 20, 20, 20);
+            selectedNodeStyle.border = new RectOffset(12, 12, 12, 12);
         }
 
         private void OnSelectionChanged()
@@ -95,11 +101,15 @@ namespace RPG.Dialogue.Editor
                 if (draggingNode != null)
                 {
                     draggingOffset = draggingNode.rect.position - Event.current.mousePosition;
+                    Selection.activeObject = draggingNode;
+                    selectedNodeId = draggingNode.uniqueId;
                 }
                 else 
                 {
                     draggingCanvas = true;
                     draggingCanvasOffset = Event.current.mousePosition + scrollPosition;
+                    Selection.activeObject = selectedDialogue;
+                    selectedNodeId = null;
                 }
             }
             else if (Event.current.type == EventType.MouseDrag && draggingNode != null) 
@@ -138,10 +148,13 @@ namespace RPG.Dialogue.Editor
 
         private void DrawNode(DialogueNode node)
         {
-            GUILayout.BeginArea(node.rect, nodeStyle);
+            if(node.uniqueId == selectedNodeId) GUILayout.BeginArea(node.rect, selectedNodeStyle);
+            else GUILayout.BeginArea(node.rect, nodeStyle);
+            
             EditorGUI.BeginChangeCheck();
-
+            GUI.SetNextControlName("NodeTextField");
             string newText = EditorGUILayout.TextField(node.text);
+            if (node.uniqueId == selectedNodeId) EditorGUI.FocusTextInControl("NodeTextField");
 
             if (EditorGUI.EndChangeCheck())
             {
@@ -149,10 +162,10 @@ namespace RPG.Dialogue.Editor
                 node.text = newText;
             }
             GUILayout.BeginHorizontal();
-            if (GUILayout.Button("x")) deleteNode = node;
-            DrawLinkButtons(node);
-            if (GUILayout.Button("+")) creatingNode = node;
+            if (GUILayout.Button("Delete Node")) deleteNode = node;
+            if (GUILayout.Button("Add Node")) creatingNode = node;
             GUILayout.EndHorizontal();
+            DrawLinkButtons(node);
 
             GUILayout.EndArea();
         }
@@ -191,15 +204,15 @@ namespace RPG.Dialogue.Editor
         {
             if (linkingParentNode == null)
             {
-                if (GUILayout.Button("link")) linkingParentNode = node;
+                if (GUILayout.Button("Link")) linkingParentNode = node;
             }
             else if (linkingParentNode == node)
             {
-                if (GUILayout.Button("cancel")) linkingParentNode = null;
+                if (GUILayout.Button("Cancel")) linkingParentNode = null;
             }
             else if (linkingParentNode.children.Contains(node.uniqueId))
             {
-                if (GUILayout.Button("unlink"))
+                if (GUILayout.Button("Unlink"))
                 {
                     Undo.RecordObject(selectedDialogue, "Removed Dialogue Link");
                     linkingParentNode.children.Remove(node.uniqueId);
@@ -208,7 +221,7 @@ namespace RPG.Dialogue.Editor
             }
             else
             {
-                if (GUILayout.Button("child"))
+                if (GUILayout.Button("Child"))
                 {
                     Undo.RecordObject(selectedDialogue, "Add Dialogue Link");
                     linkingParentNode.children.Add(node.uniqueId);
