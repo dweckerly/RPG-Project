@@ -461,7 +461,7 @@ PrefabInstance:
       objectReference: {fileID: 6396827143253490331}
     - target: {fileID: 3813671407558320022, guid: f3fee543e1f5f9d4b875437dfe3fb617, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.0552585
+      value: 1.8551182
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3fee543e1f5f9d4b875437dfe3fb617, type: 3}
@@ -603,7 +603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224338124537362198, guid: 07dc30b6f1bbb4147acd5fd5555a18f5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -570.62585
+      value: -540.47784
       objectReference: {fileID: 0}
     - target: {fileID: 224928911778522548, guid: 07dc30b6f1bbb4147acd5fd5555a18f5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -619,11 +619,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1693024143934773398, guid: 07dc30b6f1bbb4147acd5fd5555a18f5, type: 3}
       propertyPath: m_Size
-      value: 0.94257903
+      value: 0.8730027
       objectReference: {fileID: 0}
     - target: {fileID: 1693024143934773398, guid: 07dc30b6f1bbb4147acd5fd5555a18f5, type: 3}
       propertyPath: m_Value
-      value: -0.0016765081
+      value: -0.40880686
       objectReference: {fileID: 0}
     - target: {fileID: 1702661474151556356, guid: 07dc30b6f1bbb4147acd5fd5555a18f5, type: 3}
       propertyPath: m_AnchorMax.y
